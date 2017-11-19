@@ -55,7 +55,7 @@ gulp.task('build-dist', ['clean-dist'], () => {
 
   b.transform('rollupify', {
     config: {
-      external: ['jszip', 'lop', 'path-is-absolute', 'sax', 'xmlbuilder'],
+      external: ['es6-promisify', 'jszip', 'lop', 'path-is-absolute', 'sax', 'xmlbuilder'],
       plugins: [
         nodeResolve({
           browser: true,
@@ -69,8 +69,9 @@ gulp.task('build-dist', ['clean-dist'], () => {
     presets: [
       ['env', {
         targets: {
-          browsers: ['> 1%']
-        }
+          browsers: ['> 1%', 'since 2013']
+        },
+        useBuiltIns: 'entry'
       }]
     ]
   }))
@@ -110,8 +111,9 @@ gulp.task('pretest', ['build-lib', 'copy-test-assets', 'build-bin'], () => {
       presets: [
         ['env', {
           targets: {
-            node: true
-          }
+            node: '4'
+          },
+          useBuiltIns: 'entry'
         }]
       ]
     }))
@@ -133,8 +135,9 @@ gulp.task('build-lib', ['clean-build'], () => {
       presets: [
         ['env', {
           targets: {
-            node: true
-          }
+            node: '4'
+          },
+          useBuiltIns: 'entry'
         }]
       ]
     }))
@@ -151,8 +154,9 @@ gulp.task('build-bin', ['clean-build'], () => {
       presets: [
         ['env', {
           targets: {
-            node: true
-          }
+            node: '4'
+          },
+          useBuiltIns: 'entry'
         }]
       ]
     }))

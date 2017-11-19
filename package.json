@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "argparse": "^1.0.9",
+    "es6-promisify": "^5.0.0",
     "jszip": "^2.5.0",
     "lop": "^0.4.0",
     "path-is-absolute": "^1.0.0",
@@ -25,6 +26,7 @@
     "xmlbuilder": "^9.0.4"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.0.0-beta.32",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",

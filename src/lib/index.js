@@ -1,3 +1,5 @@
+import '@babel/polyfill'
+
 import { Result } from './results'
 import openZip from './unzip'
 import * as transforms from './transforms'
