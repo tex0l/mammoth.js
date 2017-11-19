@@ -67,13 +67,14 @@ gulp.task('build-dist', ['clean-dist'], () => {
 
   b.transform(babelify.configure({
     presets: [
-      ['env', {
+      ['@babel/preset-env', {
         targets: {
-          browsers: ['> 1%', 'since 2013']
+          browsers: ['> 1%']
         },
-        useBuiltIns: 'entry'
+        useBuiltIns: 'usage'
       }]
-    ]
+    ],
+    babel: require('@babel/core')
   }))
 
   return b.bundle()
@@ -107,14 +108,13 @@ gulp.task('pretest', ['build-lib', 'copy-test-assets', 'build-bin'], () => {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(babel({
-      sourceMaps: true,
       presets: [
-        ['env', {
+        ['@babel/preset-env', {
           targets: {
             node: '4'
           },
-          useBuiltIns: 'entry'
-        }]
+          useBuiltIns: 'usage'
+      }]
       ]
     }))
     .pipe(sourcemaps.write('.'))
@@ -131,14 +131,13 @@ gulp.task('build-lib', ['clean-build'], () => {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(babel({
-      sourceMaps: true,
       presets: [
-        ['env', {
+        ['@babel/preset-env', {
           targets: {
             node: '4'
           },
-          useBuiltIns: 'entry'
-        }]
+          useBuiltIns: 'usage'
+      }]
       ]
     }))
     .pipe(sourcemaps.write('.'))
@@ -150,14 +149,13 @@ gulp.task('build-bin', ['clean-build'], () => {
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(babel({
-      sourceMaps: true,
       presets: [
-        ['env', {
+        ['@babel/preset-env', {
           targets: {
             node: '4'
           },
-          useBuiltIns: 'entry'
-        }]
+          useBuiltIns: 'usage'
+      }]
       ]
     }))
     .pipe(sourcemaps.write('.'))
