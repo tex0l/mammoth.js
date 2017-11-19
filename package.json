@@ -18,11 +18,11 @@
   },
   "dependencies": {
     "argparse": "^1.0.9",
-    "es6-promisify": "^5.0.0",
     "jszip": "^2.5.0",
     "lop": "^0.4.0",
     "path-is-absolute": "^1.0.0",
     "sax": "1.2.4",
+    "util.promisify": "^1.0.0",
     "xmlbuilder": "^9.0.4"
   },
   "devDependencies": {

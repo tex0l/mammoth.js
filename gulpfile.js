@@ -55,7 +55,7 @@ gulp.task('build-dist', ['clean-dist'], () => {
 
   b.transform('rollupify', {
     config: {
-      external: ['es6-promisify', 'jszip', 'lop', 'path-is-absolute', 'sax', 'xmlbuilder'],
+      external: ['util.promisify', 'jszip', 'lop', 'path-is-absolute', 'sax', 'xmlbuilder'],
       plugins: [
         nodeResolve({
           browser: true,

@@ -1,4 +1,4 @@
-import promisify from 'es6-promisify'
+import promisify from 'util.promisify'
 
 export { promisify }
 
